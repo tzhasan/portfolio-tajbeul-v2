@@ -100,3 +100,75 @@ body::before {
   
 }
 /* ProjectDemo  */
+
+/* Resume Section */
+.cv-container {
+  width: 60vw; /* Adjust as needed */
+  height: 70vh; /* Fixed height for scrolling */
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+}
+
+.cv-image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  animation: none; /* Start with no animation */
+  transform-origin: top;
+}
+
+.cv-container:hover .cv-image {
+  animation: scrollAnimation 40s linear infinite; /* Start animation on hover */
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.blackShadowOnCV{
+  position: relative;
+  display: inline-block;
+}
+.blackShadowOnCV::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1s, height 0.5s;
+}
+.blackShadowOnCV:hover::before{
+  height: 100%;
+  opacity: 1;
+
+}
+.CVtext-overlay {
+  position: absolute;
+  width: 90%;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Start with opacity 0, only show on hover */
+  transition: opacity 0.3s; /* Add a transition for opacity */
+  text-align: left;
+  transition-delay: 0.3s;
+  z-index: 2; /* Place the text overlay above the gradient overlay */
+  
+}
+
+.blackShadowOnCV:hover .CVtext-overlay {
+  opacity: 1; /* Show the text overlay on hover */
+  
+}
+
+
+/* Resume Section */

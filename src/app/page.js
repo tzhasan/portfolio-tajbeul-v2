@@ -1,8 +1,11 @@
+import AboutMe from "@/Components/HomePage/AboutMe";
 import AllServices from "@/Components/HomePage/AllServices";
 import CircleHead from "@/Components/HomePage/CircleHead";
+import Contact from "@/Components/HomePage/Contact";
 import MyProjects from "@/Components/HomePage/MyProjects";
 import NameSection from "@/Components/HomePage/NameSection";
 import ProjectDemo from "@/Components/HomePage/ProjectDemo";
+import ResumeSection from "@/Components/HomePage/ResumeSection";
 import Navbar from "@/Components/Navbar";
 import SideBarMenu from "@/Components/SideBarMenu";
 
@@ -22,6 +25,9 @@ export default function Home() {
         <CircleHead>ABOUT ME</CircleHead>
       </div>
       <div className="section-class">
+        <AboutMe></AboutMe>
+      </div>
+      <div className="section-class">
         <MyProjects />
       </div>
       <div className="section-class">
@@ -35,6 +41,18 @@ export default function Home() {
       </div>
       <div className="section-class">
         <ProjectDemo></ProjectDemo>
+      </div>
+      <div className="section-class">
+        <CircleHead>RESUME</CircleHead>
+      </div>
+      <div className="section-class">
+        <ResumeSection></ResumeSection>
+      </div>
+      <div className="section-class">
+        <CircleHead>CONTACT</CircleHead>
+      </div>
+      <div className="section-class">
+        <Contact></Contact>
       </div>
     </div>
   );
