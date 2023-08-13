@@ -1,9 +1,14 @@
-"use client";
+"use client"
 import React, { useRef } from "react";
 import Buttoncus from "../Utils/Buttoncus";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { PhoneArrowDownLeftIcon } from "@heroicons/react/24/outline";
 import { MapPinIcon } from "@heroicons/react/24/outline";
+import FacebookIcon from "../Icons/FacebookIcon";
+import Link from "next/link";
+import GithubIcon from "../Icons/GithubIcon";
+import LinkedInIcon from "../Icons/LinkedInIcon";
+import InstagramIcon from "../Icons/InstagramIcon";
 
 const Contact = () => {
   const form = useRef();
@@ -49,7 +54,20 @@ const Contact = () => {
               Abu Shagara, <br /> Sharjah, UAE
             </p>
           </span>
-          <div className="mt-4">Social Media</div>
+          <div className="mt-4 flex gap-2">
+            <Link href="https://www.facebook.com/tzhasansohan210">
+              <FacebookIcon />
+            </Link>
+            <Link href="https://www.linkedin.com/in/tajbeul-islam/">
+              <LinkedInIcon />
+            </Link>
+            <Link href="https://github.com/tzhasan">
+              <GithubIcon />
+            </Link>
+            <Link href="https://www.instagram.com/_iamtz_/">
+              <InstagramIcon />
+            </Link>
+          </div>
         </div>
       </div>
       <div className="w-1/2">
