@@ -1,21 +1,23 @@
 import Image from 'next/image';
 import image from '../../../public/images/Gray Simple Professional Twitter Profile Picture.png'
 import Buttoncus from '../Utils/Buttoncus';
+import Link from 'next/link';
 const AboutMe = () => {
+  
   return (
-    <div>
+    <div id="aboutme">
       <section className="text-gray-600 body-font">
         <div
-          className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
+          className="container mx-auto flex px-10 py-24 md:flex-row flex-col items-center"
           bis_skin_checked={1}
         >
           <div
-            className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0"
+            className="lg:max-w-lg lg:w-full md:w-1/2 w-full mb-10 md:mb-0 flex md:justify-end justify-center"
             bis_skin_checked={1}
           >
             <Image
               className="object-cover object-center rounded"
-              alt="hero"
+              alt="Tajbeul-islam-image"
               src={image}
             />
           </div>
@@ -33,9 +35,13 @@ const AboutMe = () => {
               MongoDB, Express.js, React.js, and Node.js, I have mastered the
               art of full-stack development.
             </p>
-            <div className="flex justify-center" bis_skin_checked={1}>
+            <Link
+              href="/aboutme"
+              className="flex justify-center"
+              bis_skin_checked={1}
+            >
               <Buttoncus>More</Buttoncus>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

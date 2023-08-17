@@ -35,7 +35,7 @@ const Contact = () => {
       );
   };
   return (
-    <div className="flex flex-col md:flex-row gap-4 items-center  w-full p-10">
+    <div id="contact" className="flex flex-col md:flex-row gap-4 items-center  w-full p-10">
       <div className="w-1/2 ">
         <div className="flex flex-col gap-4 ml-[30%]">
           <span className="flex gap-4 items-center">
@@ -54,7 +54,7 @@ const Contact = () => {
               Abu Shagara, <br /> Sharjah, UAE
             </p>
           </span>
-          <div className="mt-4 flex gap-2">
+          <div className="mt-4 flex gap-2 md:gap-6">
             <Link href="https://www.facebook.com/tzhasansohan210">
               <FacebookIcon />
             </Link>

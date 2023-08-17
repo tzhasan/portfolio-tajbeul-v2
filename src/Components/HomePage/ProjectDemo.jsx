@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Buttoncus from '../Utils/Buttoncus';
 const ProjectDemo = () => {
   return (
-    <div className="flex flex-col gap-3 md:gap-6 md:flex-row w-[100vw] mx-auto justify-center">
+    <div id='demoProject' className="flex flex-col gap-3 md:gap-6 md:flex-row w-[100vw] mx-auto justify-center md:pt-20">
       <div className="blackShadowOnImage">
         <Image width={600} height={600} src={projectImage1} />
         <div className="text-overlay space-y-4">

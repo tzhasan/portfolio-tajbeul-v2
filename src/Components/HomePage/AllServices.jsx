@@ -18,13 +18,13 @@ const servicesList = [
 ];
 const AllServices = () => {
   return (
-    <div className="grid grid-cols-3 gap-10">
+    <div className="grid sm:grid-cols-3 grid-cols-2 gap-5 md:gap-10">
       {servicesList.map((service) => (
-        <div className="border-y border-gray-500 hover:border-white py-12 px-4 text-center group relative">
-          <h5 className="text-6xl group-hover:scale-110 transition duration-300 ">
+        <div className="border-y border-gray-500 hover:border-white py-6 md:py-12 px-4 text-center group relative">
+          <h5 className="lg:text-6xl text-2xl md:text-3xl group-hover:scale-110 transition duration-300 ">
             {service.name}
           </h5>
-          <p className="text-9xl absolute top-[50%] right-[50%] translate-x-[50%] -translate-y-[50%] opacity-20 group-hover:opacity-30">
+          <p className="md:text-7xl lg:text-9xl text-6xl absolute top-[50%] right-[50%] translate-x-[50%] -translate-y-[50%] opacity-20 group-hover:opacity-30">
             {service.logo}
           </p>
         </div>

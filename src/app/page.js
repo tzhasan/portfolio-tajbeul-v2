@@ -1,3 +1,4 @@
+'use client'
 import AboutMe from "@/Components/HomePage/AboutMe";
 import AllServices from "@/Components/HomePage/AllServices";
 import CircleHead from "@/Components/HomePage/CircleHead";
@@ -8,11 +9,10 @@ import ProjectDemo from "@/Components/HomePage/ProjectDemo";
 import ResumeSection from "@/Components/HomePage/ResumeSection";
 import Navbar from "@/Components/Navbar";
 import SideBarMenu from "@/Components/SideBarMenu";
-
 export default function Home() {
   return (
     <div>
-      <div className="">
+      <div>
         <Navbar />
       </div>
       <div className="mt-72 fixed">
@@ -27,7 +27,7 @@ export default function Home() {
       <div className="section-class">
         <AboutMe></AboutMe>
       </div>
-      <div className="section-class">
+      <div className="section-class ">
         <MyProjects />
       </div>
       <div className="section-class">
