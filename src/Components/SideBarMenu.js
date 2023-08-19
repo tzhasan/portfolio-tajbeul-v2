@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation";
 
 const SideBarMenu = () => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <div className="hidden md:block">
       {pathname === "/" && (

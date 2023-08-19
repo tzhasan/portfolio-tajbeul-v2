@@ -12,13 +12,11 @@ import SideBarMenu from "@/Components/SideBarMenu";
 export default function Home() {
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
-      <div className="mt-72 fixed">
+      <Navbar />
+      <div className="mt-72 fixed pt-[7%]  z-30">
         <SideBarMenu />
       </div>
-      <div className="h-[75vh] w-full mx-auto flex justify-center items-center">
+      <div className="h-[75vh] w-full mx-auto pt-[10%] flex justify-center items-center">
         <NameSection />
       </div>
       <div className="section-class">
