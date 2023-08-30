@@ -35,22 +35,25 @@ const Contact = () => {
       );
   };
   return (
-    <div id="contact" className="flex flex-col md:flex-row gap-4 items-center  w-full p-10">
-      <div className="w-1/2 ">
-        <div className="flex flex-col gap-4 ml-[30%]">
+    <div
+      id="contact"
+      className="flex flex-col md:flex-row md:gap-4 gap-10 items-center  w-full p-10"
+    >
+      <div className="md:w-1/2 w-full ">
+        <div className="flex flex-col gap-4 md:ml-[30%]">
           <span className="flex gap-4 items-center">
             <PaperAirplaneIcon className="h-12 w-12 text-white  p-1 " />
-            <p className="text-md md:text-xl font-medium">
+            <p className="text-md sm:text-sm md:text-lg font-medium">
               sohantajbiul210@gmail.com
             </p>
           </span>
           <span className="flex gap-4 items-center">
             <PhoneArrowDownLeftIcon className="h-12 w-12 text-white  p-1 " />
-            <p className="text-md md:text-xl font-medium">+971 588 66 7013</p>
+            <p className="text-md sm:text-sm md:text-lg font-medium">+971 588 66 7013</p>
           </span>
           <span className="flex gap-4 items-center">
             <MapPinIcon className="h-12 w-12 text-white  p-1 " />
-            <p className="text-md md:text-xl font-medium">
+            <p className="text-md sm:text-sm md:text-lg font-medium">
               Abu Shagara, <br /> Sharjah, UAE
             </p>
           </span>
@@ -70,7 +73,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/2">
+      <div className="md:w-1/2 w-full ml-6 ">
         <form ref={form} onSubmit={sendEmail}>
           <div className="mb-6">
             <label className="block mb-2 text-md md:text-xl font-medium text-gray-900 dark:text-white">

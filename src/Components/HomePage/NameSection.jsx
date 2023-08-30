@@ -3,7 +3,6 @@
 import { Link } from "react-scroll";
 
 const NameSection = () => {
-  
   return (
     <div id="namesection">
       <h2 className="text-center md:text-6xl sm:text-4xl text-3xl font-bold mb-[10%] ">

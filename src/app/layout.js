@@ -1,3 +1,4 @@
+import AuthProvider from '@/Providers/AuthProvider';
 import './globals.css'
 import { Montserrat } from "next/font/google";
 
@@ -12,7 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <div className="max-w-[95%] mx-auto">{children}</div>
+        <AuthProvider>
+          <div className="max-w-[95%] mx-auto">{children}</div>
+        </AuthProvider>
       </body>
     </html>
   );

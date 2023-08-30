@@ -3,6 +3,7 @@ import React from "react";
 // import svg from '../../../public/otherResources/undraw_project_completed_re_jr7u.svg'
 import svg from "../../../public/otherResources/undraw_maker_launch_re_rq81.svg";
 import Buttoncus from "../Utils/Buttoncus";
+import Link from "next/link";
 
 const MyProjects = () => {
   return (
@@ -20,9 +21,9 @@ const MyProjects = () => {
             I look forward to sharing my projects with you and showcasing the
             passion and dedication I bring to every aspect of web development.
           </p>
-          <div className="flex justify-center md:justify-start">
+          <Link href='/projects' className="flex justify-center md:justify-start">
             <Buttoncus>My Works</Buttoncus>
-          </div>
+          </Link>
         </div>
       </div>
       <div className="md:w-2/5 w-full flex justify-center md:justify-start">
