@@ -75,7 +75,7 @@ const Contact = () => {
 
 export default Contact;
 
-export const metadata = {
-  title: "Contact",
-  description: "Portfolio of Tajbeul islam | MERN stack web developer",
-};
+// export const metadata = {
+//   title: "Contact",
+//   description: "Portfolio of Tajbeul islam | MERN stack web developer",
+// };
