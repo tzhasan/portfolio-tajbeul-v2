@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Buttoncus from "../Utils/Buttoncus";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { PhoneArrowDownLeftIcon } from "@heroicons/react/24/outline";
@@ -9,37 +9,29 @@ import Link from "next/link";
 import GithubIcon from "../Icons/GithubIcon";
 import LinkedInIcon from "../Icons/LinkedInIcon";
 import InstagramIcon from "../Icons/InstagramIcon";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useForm, ValidationError } from "@formspree/react";
+import toast, { Toaster } from "react-hot-toast";
+
 
 const Contact = () => {
-  const form = useRef();
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false, mirror: false, delay: 0 });
+  }, []);
+  const [state, handleSubmit] = useForm("meqbkljq");
+   if (state.succeeded) {
+     toast.success("Successfully send!");
+  }
 
-  const sendEmail = (e) => {
-    console.log("hello");
-    e.preventDefault();
-    console.log(form.current.name.value);
-
-    emailjs
-      .sendForm(
-        "service_qdg526o",
-        "template_plka0ug",
-        form.current,
-        "riGtYH0NU2Gfd4gzJ"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
   return (
     <div
       id="contact"
       className="flex flex-col md:flex-row md:gap-4 gap-10 items-center  w-full p-10"
     >
-      <div className="md:w-1/2 w-full ">
+      <Toaster position="top-center" reverseOrder={false} />
+
+      <div data-aos="fade-right" className="md:w-1/2 w-full ">
         <div className="flex flex-col gap-4 md:ml-[30%]">
           <span className="flex gap-4 items-center">
             <PaperAirplaneIcon className="h-12 w-12 text-white  p-1 " />
@@ -49,7 +41,9 @@ const Contact = () => {
           </span>
           <span className="flex gap-4 items-center">
             <PhoneArrowDownLeftIcon className="h-12 w-12 text-white  p-1 " />
-            <p className="text-md sm:text-sm md:text-lg font-medium">+971 588 66 7013</p>
+            <p className="text-md sm:text-sm md:text-lg font-medium">
+              +971 588 66 7013
+            </p>
           </span>
           <span className="flex gap-4 items-center">
             <MapPinIcon className="h-12 w-12 text-white  p-1 " />
@@ -73,13 +67,14 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="md:w-1/2 w-full ml-6 ">
-        <form ref={form} onSubmit={sendEmail}>
+      <div data-aos="fade-left" className="md:w-1/2 w-full ml-6 ">
+        <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <label className="block mb-2 text-md md:text-xl font-medium text-gray-900 dark:text-white">
               Your Name*
             </label>
             <input
+              id="name"
               name="name"
               type="text"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -106,6 +101,7 @@ const Contact = () => {
               Your message*
             </label>
             <input
+              id="message"
               name="message"
               type="text"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -113,7 +109,7 @@ const Contact = () => {
               required
             />
           </div>
-          <button type="submit">
+          <button type="submit" disabled={state.submitting}>
             <Buttoncus>Submit</Buttoncus>
           </button>
         </form>

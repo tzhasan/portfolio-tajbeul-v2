@@ -5,30 +5,64 @@ import Lottie from "lottie-react";
 import groovyWalkAnimation from "../../../public/otherResources/google-json.json";
 import Buttoncus from "@/Components/Utils/Buttoncus";
 import { AuthContext } from "@/Providers/AuthProvider";
+import Image from "next/image";
+import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import Loading from "@/Components/Utils/Loading";
+
 const page = () => {
-  const { googleSignIn ,user} = useContext(AuthContext)
+  const router = useRouter()
+  const { googleSignIn, user, logOut, loading } = useContext(AuthContext);
   const handleGoogleSignin = () => {
     googleSignIn()
       .then((result) => {
-      alert('Loged in successfully')
+        toast.success("Login successful!");
+        router.push('/')
+
       })
       .catch((error) => { 
-        alert('Failed to login')
+        console.log(error.message)
+                  toast.error("Login failed!!`");
+
       })
   }
+  const handleLogOut = () => {
+    logOut();
+      toast.success("Logout successful!");
+
+  };
+   if (loading) {
+     return (
+       <div className="md:pt-[20%] pt-[30%]">
+         <Loading />
+       </div>
+     );
+   }
   return (
     <div>
+      <Toaster position="top-center" reverseOrder={false} />
+
       <Navbar />
       <div className="pt-[60%] md:pt-[10%] ">
-        <div className="w-[20%] mx-auto">
-          <Lottie animationData={groovyWalkAnimation} loop={true} />
-        </div>
         {user ? (
-          <div onClick={handleGoogleSignin} className="flex justify-center">
-            <Buttoncus>
-       
-              Log out
-            </Buttoncus>
+          <div className="flex flex-col items-center gap-6 justify-center mb-8">
+            <Image
+              className="rounded-full"
+              width={100}
+              height={100}
+              src={user?.photoURL}
+            />
+            <p className="text-xl font-bold">{user?.displayName}</p>
+          </div>
+        ) : (
+          <div className=" w-[20%] mx-auto">
+            <Lottie animationData={groovyWalkAnimation} loop={true} />
+          </div>
+        )}
+        <div className="w-[20%] mx-auto"></div>
+        {user ? (
+          <div onClick={handleLogOut} className="flex justify-center">
+            <Buttoncus>Log out</Buttoncus>
           </div>
         ) : (
           <div onClick={handleGoogleSignin} className="flex justify-center">
@@ -65,7 +99,6 @@ const page = () => {
             </Buttoncus>
           </div>
         )}
-        
       </div>
     </div>
   );

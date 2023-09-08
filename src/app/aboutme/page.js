@@ -10,7 +10,6 @@ import { usePathname } from 'next/navigation';
 
 const aboutMe = () => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <div>
       <div>

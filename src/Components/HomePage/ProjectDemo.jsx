@@ -2,10 +2,19 @@ import projectImage1 from '../../../public/images/phonetic-project12.png'
 import projectImage2 from '../../../public/images/legends-project11.png'
 import Image from 'next/image';
 import Buttoncus from '../Utils/Buttoncus';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 const ProjectDemo = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1500, once: false, mirror: false, delay: 0 });
+  }, []);
   return (
-    <div id='demoProject' className="flex flex-col gap-3 md:gap-6 md:flex-row w-[100vw] mx-auto justify-center md:pt-20">
-      <div className="blackShadowOnImage">
+    <div
+      id="demoProject"
+      className="flex flex-col gap-3 md:gap-6 md:flex-row w-[100vw] mx-auto justify-center md:pt-20"
+    >
+      <div data-aos="zoom-in" className="blackShadowOnImage">
         <Image width={600} height={600} src={projectImage1} />
         <div className="text-overlay space-y-4">
           <p className="md:text-4xl text-xl font-bold ">PHONETIC</p>
@@ -21,7 +30,7 @@ const ProjectDemo = () => {
           </div>
         </div>
       </div>
-      <div className="blackShadowOnImage">
+      <div data-aos="zoom-in" className="blackShadowOnImage">
         <Image width={600} height={600} src={projectImage2} />
         <div className="text-overlay space-y-4">
           <p className="md:text-4xl text-xl font-bold ">LEGENDS</p>

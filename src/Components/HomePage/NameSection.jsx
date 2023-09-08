@@ -1,16 +1,29 @@
 
 "use client"
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import Link from "next/link";
 
 const NameSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: false, mirror: false, delay: 0 });
+  }, []);
   return (
     <div id="namesection">
-      <h2 className="text-center md:text-6xl sm:text-4xl text-3xl font-bold mb-[10%] ">
+      <h2
+        data-aos="zoom-out-up"
+        className="text-center md:text-6xl sm:text-4xl text-3xl font-bold mb-[10%] "
+      >
         TAJBEUL ISLAM
       </h2>
       {/* Large */}
-      <div className="flex justify-center gap-8 transition duration-300 delay-500">
-        <Link
+      <div className=" flex justify-center gap-8 transition duration-300 delay-500">
+        <ScrollLink
+          data-aos="fade-right"
+          data-aos-delay="1000"
           to="aboutme"
           spy={true}
           smooth={true}
@@ -24,9 +37,11 @@ const NameSection = () => {
           <p className="group-hover:block namesecparastyle text-xs sm:text-sm md:text-md">
             Read more who i am
           </p>
-        </Link>
+        </ScrollLink>
         <Link
-          to="bestprojects"
+          data-aos="fade-left"
+          data-aos-delay="1000"
+          href="/projects"
           spy={true}
           smooth={true}
           offset={-100}

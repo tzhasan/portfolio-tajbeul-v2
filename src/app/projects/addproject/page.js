@@ -1,8 +1,7 @@
 "use client";
 import Navbar from "@/Components/Navbar";
 import Buttoncus from "@/Components/Utils/Buttoncus";
-import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 

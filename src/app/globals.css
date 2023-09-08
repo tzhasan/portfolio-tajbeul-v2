@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-image: url('../../public/images/body-background.jpg');
+body {
+  background-image: url("../../public/images/body-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
@@ -20,68 +20,66 @@ body::before {
   z-index: -1;
 }
 
-.borderThin{
+.borderThin {
   border-color: gray;
   border-width: 0.3px;
   transition: 0.4s;
 }
-.borderThin:hover{
+.borderThin:hover {
   background-color: white;
   border-color: white;
-  
 }
 
-.namesecparastyle{
+.namesecparastyle {
   display: none;
-  
 }
 /* .namesecparastyle:hover{
   
 
 } */
 
-.btncustomized{
+.btncustomized {
   border: 0.2px solid gray;
   color: white;
   font-size: larger;
   font-weight: 500;
   padding: 10px 22px;
   transition: 0.4s;
-
 }
-.btncustomized:hover{
+.btncustomized:hover {
   border: 0.2px solid white;
   color: black;
   background-color: white;
 }
 
-.section-class{
-  @apply h-[100vh] w-full mx-auto flex justify-center items-center
+.section-class {
+  @apply h-[100vh] w-full mx-auto flex justify-center items-center;
 }
 
-
-
 /* ProjectDemo  */
-.blackShadowOnImage{
+.blackShadowOnImage {
   position: relative;
   display: inline-block;
 }
-.blackShadowOnImage::before{
-  content: '';
+.blackShadowOnImage::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 0%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.8)
+  );
   opacity: 0;
   z-index: 1;
   transition: opacity 1s, height 0.5s;
 }
-.blackShadowOnImage:hover::before{
+.blackShadowOnImage:hover::before {
   height: 100%;
   opacity: 1;
-
 }
 .text-overlay {
   position: absolute;
@@ -94,12 +92,10 @@ body::before {
   text-align: left;
   transition-delay: 0.3s;
   z-index: 2; /* Place the text overlay above the gradient overlay */
-  
 }
 
 .blackShadowOnImage:hover .text-overlay {
   opacity: 1; /* Show the text overlay on hover */
-  
 }
 /* ProjectDemo  */
 
@@ -132,26 +128,29 @@ body::before {
     transform: translateY(-100%);
   }
 }
-.blackShadowOnCV{
+.blackShadowOnCV {
   position: relative;
   display: inline-block;
 }
-.blackShadowOnCV::before{
-  content: '';
+.blackShadowOnCV::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 0%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.8)
+  );
   opacity: 0;
   z-index: 1;
   transition: opacity 1s, height 0.5s;
 }
-.blackShadowOnCV:hover::before{
+.blackShadowOnCV:hover::before {
   height: 100%;
   opacity: 1;
-
 }
 .CVtext-overlay {
   position: absolute;
@@ -164,39 +163,39 @@ body::before {
   text-align: left;
   transition-delay: 0.3s;
   z-index: 2; /* Place the text overlay above the gradient overlay */
-  
 }
 
 .blackShadowOnCV:hover .CVtext-overlay {
   opacity: 1; /* Show the text overlay on hover */
-  
 }
-
 
 /* Resume Section */
 
 /* project Section */
-.blackShadowOnProject{
+.blackShadowOnProject {
   position: relative;
   display: inline-block;
 }
-.blackShadowOnProject::before{
-  content: '';
+.blackShadowOnProject::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 0%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.8)
+  );
   opacity: 0;
   z-index: 1;
   border-radius: 6px;
   transition: opacity 1s, height 0.5s;
 }
-.blackShadowOnProject:hover::before{
+.blackShadowOnProject:hover::before {
   height: 100%;
   opacity: 1;
-
 }
 
 .Projecttext-overlay {
@@ -210,10 +209,16 @@ body::before {
   text-align: left;
   transition-delay: 0.3s;
   z-index: 2; /* Place the text overlay above the gradient overlay */
-  
 }
 .blackShadowOnProject:hover .Projecttext-overlay {
   opacity: 1; /* Show the text overlay on hover */
-  
 }
 /* project Section */
+
+/* name-section-group-hover */
+.name-section-group-hover {
+  transition: 3s;
+
+}
+
+/* name-section-group-hover */

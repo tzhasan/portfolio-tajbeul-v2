@@ -1,25 +1,51 @@
 'use client'
+
 import Link from 'next/link';
 import '../app/globals.css'
 import { Bars3BottomLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import {  } from "@heroicons/react/24/outline";
-
-
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '@/Providers/AuthProvider';
 import Image from 'next/image';
-
+import { Toaster, toast } from 'react-hot-toast';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const {menuIsOpen,setmenuIsOpen,user,loading,logOut} = useContext(AuthContext)
   const [showLogo, setShowLogo] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-console.log(user);
+  const pathname = usePathname()
+  const navlinks = [
+    {
+      name: "HOME",
+      link: "/",
+    },
+    {
+      name: "PROJECTS",
+      link: "/projects",
+    },
+    {
+      name: "CONTACT",
+      link: "/contact",
+    },
+    {
+      name: "PROFILE",
+      link: "/login",
+    },
+  ];
+  const menulinks = [
+    { name: "Contact", link: "/contact" },
+    { name: "Demo", link: "/projects" },
+  ];
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
     }
   const handleLogOut = () => {
     logOut()
+      toast.success("Logout successful!");
+
   }
   useEffect(() => {
     const handleScroll = () => {
@@ -33,9 +59,14 @@ console.log(user);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  useEffect(() => {
+    AOS.init({ duration: 400, once: false, mirror: false, delay: 0 });
+  }, []);
   
   return (
     <div className="bg-gray-500  ">
+      <Toaster position="top-center" reverseOrder={false} />
+
       <nav className="flex items-center justify-between  my-12  mx-auto fixed left-0 right-0 w-[95%] z-30">
         <div
           onClick={() => setmenuIsOpen(!menuIsOpen)}
@@ -56,55 +87,53 @@ console.log(user);
         </div>
         <div className="md:block hidden">
           <div className="flex gap-6 text-xl ">
-            <Link href="/contact">
-              <button>Contact</button>
+            {
+              menulinks.map(({ name, link }) => (
+            <Link className={`hover:text-sky-400 ${pathname===link ? 'text-sky-400':''}`} href={link}>
+                  <button>{ name}</button>
             </Link>
-            <Link href="/projects">
-              <button>Demo</button>
-            </Link>
+                
+              ))
+            }
+            
           </div>
         </div>
       </nav>
       {menuIsOpen && (
         <div className="fixed left-0 right-0 top-0 bottom-0 w-full h-full z-10">
           {/* Content */}
-          <div className="text-2xl sm:text-4xl md:text-6xl font-bold w-[60%] mx-auto  justify-center items-center translate-y-52 flex flex-col gap-6 ">
-            <Link
-              onClick={() => setmenuIsOpen(!menuIsOpen)}
-              href="/"
-              className="hover:text-sky-400 delay-0 duration-300"
-            >
-              Home
-            </Link>
-            <Link
-              onClick={() => setmenuIsOpen(!menuIsOpen)}
-              href="/projects"
-              className="hover:text-sky-400 delay-0 duration-300"
-            >
-              Projects
-            </Link>
-            <Link
-              onClick={() => setmenuIsOpen(!menuIsOpen)}
-              href="/contact"
-              className="hover:text-sky-400 delay-0 duration-300"
-            >
-              Contact
-            </Link>
+          <div
+            data-aos="zoom-out"
+            className="text-2xl sm:text-4xl md:text-6xl font-bold w-[60%] mx-auto  justify-center items-center translate-y-52 flex flex-col gap-6 pt-[25%] md:pt-[10%]"
+          >
+            {navlinks.map((links) => (
+              <Link
+                onClick={() => setmenuIsOpen(!menuIsOpen)}
+                href={links.link}
+                className={`hover:text-sky-400 delay-0 duration-300 ${
+                 pathname===links.link ? 'text-sky-400' : ''
+                }`}
+              >
+                {links.name}
+              </Link>
+            ))}
+
+            <hr className="h-2 w-[50%] text-white" />
+            <span className={`${user ? "block" : "hidden"}`}>
+              {" "}
+              <Image
+                className="rounded-full"
+                width={50}
+                height={50}
+                src={user?.photoURL}
+              />
+            </span>
             {user ? (
               <p
                 onClick={handleLogOut}
                 className="hover:text-sky-400 delay-0 duration-300 cursor-pointer flex justify-center items-center gap-4"
               >
                 Log out{" "}
-                <span>
-                  {" "}
-                  <Image
-                    className="rounded-full"
-                    width={50}
-                    height={50}
-                    src={user?.photoURL}
-                  />
-                </span>
               </p>
             ) : (
               <Link
@@ -125,3 +154,27 @@ console.log(user);
 };
 
 export default Navbar;
+
+{/* <Link
+              onClick={() => setmenuIsOpen(!menuIsOpen)}
+              href="/projects"
+              className="hover:text-sky-400 delay-0 duration-300"
+            >
+              Projects
+            </Link>
+            <Link
+              onClick={() => setmenuIsOpen(!menuIsOpen)}
+              href="/contact"
+              className="hover:text-sky-400 delay-0 duration-300"
+            >
+              Contact
+            </Link>
+            <Link
+              onClick={() => setmenuIsOpen(!menuIsOpen)}
+              href="/login"
+              className={`hover:text-sky-400 delay-0 duration-300 ${
+                user ? "block" : "hidden"
+              }`}
+            >
+              Profile
+            </Link> */}

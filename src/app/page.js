@@ -10,10 +10,11 @@ import ResumeSection from "@/Components/HomePage/ResumeSection";
 import Navbar from "@/Components/Navbar";
 import SideBarMenu from "@/Components/SideBarMenu";
 import { AuthContext } from "@/Providers/AuthProvider";
-import { useContext} from "react";
+import { useContext } from "react";
+
 export default function Home() {
   const { menuIsOpen } = useContext(AuthContext)
-   
+  
   return (
     <div>
       <Navbar />
@@ -28,6 +29,7 @@ export default function Home() {
         <NameSection />
       </div>
       <div
+        // data-aos="zoom-in"
         className={`section-class ${menuIsOpen ? "opacity-30" : "opacity-100"}`}
       >
         <CircleHead>ABOUT ME</CircleHead>
@@ -43,6 +45,7 @@ export default function Home() {
         <MyProjects />
       </div>
       <div
+        // data-aos="zoom-in"
         className={`section-class ${menuIsOpen ? "opacity-30" : "opacity-100"}`}
       >
         <CircleHead>SERVICES OFFERING</CircleHead>
@@ -53,6 +56,7 @@ export default function Home() {
         <AllServices></AllServices>
       </div>
       <div
+        // data-aos="zoom-in"
         className={`section-class ${menuIsOpen ? "opacity-30" : "opacity-100"}`}
       >
         <CircleHead>PROJECT DEMO</CircleHead>
@@ -63,6 +67,7 @@ export default function Home() {
         <ProjectDemo></ProjectDemo>
       </div>
       <div
+        // data-aos="zoom-in"
         className={`section-class ${menuIsOpen ? "opacity-30" : "opacity-100"}`}
       >
         <CircleHead>RESUME</CircleHead>
@@ -73,6 +78,7 @@ export default function Home() {
         <ResumeSection></ResumeSection>
       </div>
       <div
+        // data-aos="zoom-in"
         className={`section-class ${menuIsOpen ? "opacity-30" : "opacity-100"}`}
       >
         <CircleHead>CONTACT</CircleHead>

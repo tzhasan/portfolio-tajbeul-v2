@@ -4,5 +4,4 @@ module.exports = {
     domains: ["lh3.googleusercontent.com"], // Add the hostname here
   },
   swcMinify: true,
-  output: "export",
 };

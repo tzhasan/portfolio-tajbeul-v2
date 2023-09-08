@@ -12,7 +12,6 @@ const useProject = () => {
           throw new Error("Failed to fetch");
         }
         const data = await res.json();
-        console.log(data);
          setProjects(data.projects);
       } catch (error) {
         console.log("error fetching projects", error);

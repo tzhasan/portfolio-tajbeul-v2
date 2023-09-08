@@ -1,9 +1,15 @@
+'use client'
 import Image from 'next/image';
 import image from '../../../public/images/Gray Simple Professional Twitter Profile Picture.png'
 import Buttoncus from '../Utils/Buttoncus';
 import Link from 'next/link';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 const AboutMe = () => {
-  
+  useEffect(() => {
+    AOS.init({ duration: 800, once: false, mirror: false, delay: 0 }); 
+  }, []);
   return (
     <div id="aboutme">
       <section className="text-gray-600 body-font">
@@ -12,6 +18,7 @@ const AboutMe = () => {
           bis_skin_checked={1}
         >
           <div
+            data-aos="fade-right"
             className="lg:max-w-lg lg:w-full md:w-1/2 w-full mb-10 md:mb-0 flex md:justify-end justify-center"
             bis_skin_checked={1}
           >
@@ -22,6 +29,7 @@ const AboutMe = () => {
             />
           </div>
           <div
+            data-aos="fade-left"
             className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center"
             bis_skin_checked={1}
           >

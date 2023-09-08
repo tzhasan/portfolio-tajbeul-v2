@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <body className={montserrat.className}>
         <AuthProvider>
           <div className="max-w-[95%] mx-auto">{children}</div>
