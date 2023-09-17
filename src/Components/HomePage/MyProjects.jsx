@@ -18,7 +18,7 @@ const MyProjects = () => {
       id="bestprojects"
       className="flex flex-col-reverse items-center justify-center gap-10 md:gap-0  md:flex-row"
     >
-      <div data-aos="fade-right" className="md:w-1/2 w-full  ">
+      <div data-aos="zoom-in" className="md:w-1/2 w-full  ">
         <div className="space-y-10 w-fit md:ml-[20%] text-center md:text-left ">
           {/* text */}
           <h4 className=" title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
@@ -37,14 +37,13 @@ const MyProjects = () => {
         </div>
       </div>
       <div
-        data-aos="fade-left"
+        data-aos="zoom-in"
         className="md:w-1/2 w-full flex justify-center md:justify-start"
       >
         {/* image */}
         <div className="  mx-auto">
           <Lottie animationData={groovyWalkAnimation} loop={true} />
         </div>
-        {/* <Image src={svg} width={500} height={500} /> */}
       </div>
     </div>
   );

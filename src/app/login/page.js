@@ -31,13 +31,13 @@ const page = () => {
       toast.success("Logout successful!");
 
   };
-   if (loading) {
-     return (
-       <div className="md:pt-[20%] pt-[30%]">
-         <Loading />
-       </div>
-     );
-   }
+  //  if (loading) {
+  //    return (
+  //      <div className="md:pt-[20%] pt-[30%]">
+  //        <Loading />
+  //      </div>
+  //    );
+  //  }
   return (
     <div>
       <Toaster position="top-center" reverseOrder={false} />
@@ -47,6 +47,7 @@ const page = () => {
         {user ? (
           <div className="flex flex-col items-center gap-6 justify-center mb-8">
             <Image
+              alt="image"
               className="rounded-full"
               width={100}
               height={100}

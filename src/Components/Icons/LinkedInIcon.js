@@ -18,8 +18,8 @@ const LinkedInIcon = () => {
         gradientTransform="translate(1054.43 -1226.825)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#2489be"></stop>
-        <stop offset="1" stop-color="#0575b3"></stop>
+        <stop offset="0" stopColor="#2489be"></stop>
+        <stop offset="1" stopColor="#0575b3"></stop>
       </linearGradient>
       <path
         fill="url(#a)"

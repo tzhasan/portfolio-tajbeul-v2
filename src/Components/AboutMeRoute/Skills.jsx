@@ -20,7 +20,7 @@ const Skills = () => {
         <div className="flex items-center justify-center">
           <div>
             {/* icon */}
-            <Image className="w-14 h-14 mr-10" src={html} />
+            <Image alt="image" className="w-14 h-14 mr-10" src={html} />
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
             <motion.div
@@ -35,7 +35,7 @@ const Skills = () => {
         <div className="flex items-center justify-center">
           <div>
             {/* icon */}
-            <Image className="w-14 h-14 mr-10" src={css} />
+            <Image alt="image" className="w-14 h-14 mr-10" src={css} />
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
             <motion.div
@@ -50,7 +50,7 @@ const Skills = () => {
         <div className="flex items-center justify-center">
           <div>
             {/* icon */}
-            <Image className="w-14 h-14 mr-10" src={tailwind} />
+            <Image alt="image" className="w-14 h-14 mr-10" src={tailwind} />
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
             <motion.div
@@ -65,7 +65,7 @@ const Skills = () => {
         <div className="flex items-center justify-center">
           <div>
             {/* icon */}
-            <Image className="w-14 h-14 mr-10" src={js} />
+            <Image alt="image" className="w-14 h-14 mr-10" src={js} />
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
             <motion.div
@@ -80,7 +80,7 @@ const Skills = () => {
         <div className="flex items-center justify-center">
           <div>
             {/* icon */}
-            <Image className="w-14 h-14 mr-10" src={react} />
+            <Image alt="image" className="w-14 h-14 mr-10" src={react} />
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
             <motion.div
@@ -95,7 +95,7 @@ const Skills = () => {
         <div className="flex items-center justify-center">
           <div>
             {/* icon */}
-            <Image className="w-14 h-14 mr-10" src={node} />
+            <Image alt="image" className="w-14 h-14 mr-10" src={node} />
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
             <motion.div
@@ -110,7 +110,7 @@ const Skills = () => {
         <div className="flex items-center justify-center">
           <div>
             {/* icon */}
-            <Image className="w-14 h-14 mr-10" src={express} />
+            <Image alt="image" className="w-14 h-14 mr-10" src={express} />
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
             <motion.div
@@ -125,7 +125,7 @@ const Skills = () => {
         <div className="flex items-center justify-center">
           <div>
             {/* icon */}
-            <Image className="w-14 h-14 mr-10" src={mongodb} />
+            <Image alt="image" className="w-14 h-14 mr-10" src={mongodb} />
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
             <motion.div

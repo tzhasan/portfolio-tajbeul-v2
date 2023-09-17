@@ -28,7 +28,7 @@ const Contact = () => {
         id="contact"
         className="flex flex-col md:flex-row md:gap-4 gap-10 items-center  w-full p-10"
       >
-        <div data-aos="fade-right" className="md:w-1/2 w-full ">
+        <div data-aos="zoom-in" className="md:w-1/2 w-full ">
           <div className="flex flex-col gap-4 md:ml-[30%]">
             <span className="flex gap-4 items-center">
               <PaperAirplaneIcon className="h-12 w-12 text-white  p-1 " />
@@ -64,7 +64,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div data-aos="fade-left" className="md:w-1/2 w-full ml-6 ">
+        <div data-aos="zoom-in" className="md:w-1/2 w-full ml-6 ">
           {/* form */}
           <ContactForm></ContactForm>
         </div>

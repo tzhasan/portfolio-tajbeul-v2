@@ -55,6 +55,7 @@ const projects = () => {
               >
                 <div>
                   <Image
+                    alt="image"
                     className="cover w-full"
                     src={p.imageurl}
                     width={500}

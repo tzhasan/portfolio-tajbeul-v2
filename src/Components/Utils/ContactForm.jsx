@@ -24,7 +24,10 @@ const ContactForm = () => {
       <Toaster position="top-center" reverseOrder={false} />
 
       <div className="mb-6">
-        <label className="block mb-2 text-md md:text-xl font-medium text-gray-900 dark:text-white">
+        <label
+          htmlFor="name"
+          className="block mb-2 text-md md:text-xl font-medium text-gray-900 dark:text-white"
+        >
           Your Name*
         </label>
         <input
@@ -34,10 +37,14 @@ const ContactForm = () => {
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Elon Musk"
           required
+          autoComplete="name"
         />
       </div>
       <div className="mb-6">
-        <label className="block mb-2 text-md md:text-xl font-medium text-gray-900 dark:text-white">
+        <label
+          htmlFor="email"
+          className="block mb-2 text-md md:text-xl font-medium text-gray-900 dark:text-white"
+        >
           Your email*
         </label>
         <input
@@ -47,11 +54,15 @@ const ContactForm = () => {
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="name@email.com"
           required
+          autoComplete="email"
         />
       </div>
 
       <div className="mb-6">
-        <label className="block mb-2 text-md md:text-xl font-medium text-gray-900 dark:text-white">
+        <label
+          htmlFor="message"
+          className="block mb-2 text-md md:text-xl font-medium text-gray-900 dark:text-white"
+        >
           Your message*
         </label>
         <input
@@ -61,6 +72,7 @@ const ContactForm = () => {
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Message"
           required
+          autoComplete="off"
         />
       </div>
       <div type="submit" disabled={state.submitting}>

@@ -23,13 +23,16 @@ const addProject = () => {
         const base64Image = event.target.result;
         data.imageurl = base64Image;
         try {
-          const res = await fetch("http://localhost:3000/api/projects", {
-            method: "POST",
-            headers: {
-              contentType: "application/json",
-            },
-            body: JSON.stringify(data),
-          });
+          const res = await fetch(
+            "http://https://tajbeul.vercel.app/api/projects",
+            {
+              method: "POST",
+              headers: {
+                contentType: "application/json",
+              },
+              body: JSON.stringify(data),
+            }
+          );
           if (res.ok) {
             toast.success("Successfully added!");
             reset();

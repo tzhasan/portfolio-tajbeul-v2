@@ -13,7 +13,7 @@ const ResumeSection = () => {
   return (
     <div>
       <div data-aos="zoom-in" className="cv-container blackShadowOnCV">
-        <Image className="cv-image" src={resume} />
+        <Image alt="image" className="cv-image" src={resume} />
         <div className="CVtext-overlay flex flex-col md:flex-row gap-4">
           <a href="https://drive.google.com/file/d/1C4vQT4KbUVjk-EyKTpXC4BZPG2IDSbSM/view?usp=drive_link">
             <Buttoncus>Drive</Buttoncus>

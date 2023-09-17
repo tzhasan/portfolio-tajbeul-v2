@@ -15,7 +15,7 @@ const ProjectDemo = () => {
       className="flex flex-col gap-3 md:gap-6 md:flex-row w-[100vw] mx-auto justify-center md:pt-20"
     >
       <div data-aos="zoom-in" className="blackShadowOnImage">
-        <Image width={600} height={600} src={projectImage1} />
+        <Image alt="image" width={600} height={600} src={projectImage1} />
         <div className="text-overlay space-y-4">
           <p className="md:text-4xl text-xl font-bold ">PHONETIC</p>
           <p>
@@ -31,7 +31,7 @@ const ProjectDemo = () => {
         </div>
       </div>
       <div data-aos="zoom-in" className="blackShadowOnImage">
-        <Image width={600} height={600} src={projectImage2} />
+        <Image alt="image" width={600} height={600} src={projectImage2} />
         <div className="text-overlay space-y-4">
           <p className="md:text-4xl text-xl font-bold ">LEGENDS</p>
           <p>

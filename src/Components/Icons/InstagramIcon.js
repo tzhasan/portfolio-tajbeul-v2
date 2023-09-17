@@ -5,7 +5,7 @@ const InstagramIcon = () => {
       width="40"
       height="40"
       fill="currentColor"
-      class="bi bi-instagram"
+      className="bi bi-instagram"
       viewBox="0 0 16 16"
     >
       {" "}

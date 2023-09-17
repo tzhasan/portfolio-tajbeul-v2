@@ -27,6 +27,7 @@ const AllServices = () => {
     <div className="grid sm:grid-cols-3 grid-cols-2 gap-5 md:gap-10">
       {servicesList.map((service) => (
         <div
+          key={service.name}
           data-aos="flip-left"
           className="border-y border-gray-500 hover:border-white py-6 md:py-12 px-4 text-center group relative"
         >

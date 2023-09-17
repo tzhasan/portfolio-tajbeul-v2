@@ -1,5 +1,4 @@
 'use client'
-
 import Link from 'next/link';
 import '../app/globals.css'
 import { Bars3BottomLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -87,15 +86,17 @@ const Navbar = () => {
         </div>
         <div className="md:block hidden">
           <div className="flex gap-6 text-xl ">
-            {
-              menulinks.map(({ name, link }) => (
-            <Link className={`hover:text-sky-400 ${pathname===link ? 'text-sky-400':''}`} href={link}>
-                  <button>{ name}</button>
-            </Link>
-                
-              ))
-            }
-            
+            {menulinks.map(({ name, link }) => (
+              <Link
+                key={name}
+                className={`hover:text-sky-400 ${
+                  pathname === link ? "text-sky-400" : ""
+                }`}
+                href={link}
+              >
+                <button>{name}</button>
+              </Link>
+            ))}
           </div>
         </div>
       </nav>
@@ -108,10 +109,11 @@ const Navbar = () => {
           >
             {navlinks.map((links) => (
               <Link
+                key={links.name}
                 onClick={() => setmenuIsOpen(!menuIsOpen)}
                 href={links.link}
                 className={`hover:text-sky-400 delay-0 duration-300 ${
-                 pathname===links.link ? 'text-sky-400' : ''
+                  pathname === links.link ? "text-sky-400" : ""
                 }`}
               >
                 {links.name}
@@ -122,6 +124,7 @@ const Navbar = () => {
             <span className={`${user ? "block" : "hidden"}`}>
               {" "}
               <Image
+                alt="image"
                 className="rounded-full"
                 width={50}
                 height={50}

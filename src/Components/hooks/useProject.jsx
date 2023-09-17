@@ -5,7 +5,7 @@ const useProject = () => {
   useEffect(() => {
     const allProjects = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/projects", {
+        const res = await fetch("https://tajbeul.vercel.app/api/projects", {
           next: { revalidate: 3600 },
         });
         if (!res.ok) {

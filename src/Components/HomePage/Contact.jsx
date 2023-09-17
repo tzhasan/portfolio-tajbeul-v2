@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { PhoneArrowDownLeftIcon } from "@heroicons/react/24/outline";
@@ -12,20 +12,17 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ContactForm from "../Utils/ContactForm";
 
-
 const Contact = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: false, mirror: false, delay: 0 });
   }, []);
-  
 
   return (
     <div
       id="contact"
       className="flex flex-col md:flex-row md:gap-4 gap-10 items-center  w-full p-10"
     >
-
-      <div data-aos="fade-right" className="md:w-1/2 w-full ">
+      <div data-aos="zoom-in" className="md:w-1/2 w-full ">
         <div className="flex flex-col gap-4 md:ml-[30%]">
           <p className="flex gap-4 items-center">
             <PaperAirplaneIcon className="h-12 w-12 text-white  p-1 " />
@@ -61,7 +58,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div data-aos="fade-left" className="md:w-1/2 w-full ml-6 ">
+      <div data-aos="zoom-in" className="md:w-1/2 w-full ml-6 ">
         <ContactForm></ContactForm>
       </div>
     </div>
