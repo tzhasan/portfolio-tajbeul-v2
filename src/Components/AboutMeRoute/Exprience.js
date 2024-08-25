@@ -4,7 +4,7 @@ const Exprience = () => {
   return (
     <div>
       <h5 className="text-2xl sm:text-3xl md:text-4xl text-center font-semibold">
-        EXPRIENCES
+        EXPERIENCES
       </h5>
       <section className="mt-[20%] flex flex-col sm:flex-row md:gap-20 gap-4">
         <div className=" py-4 text-white flex flex-col items-center sm:flex-row">
